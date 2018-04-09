@@ -1,0 +1,7 @@
+package src.code;
+
+public enum Symbol {
+  FCERC, DCERC, FRECT, DRECT, RECT, CERC,
+  NRB, OP, IDENT, VARIA, CONST, COLOR,
+  IF, THEN, ELSE, BEGIN, END, LPAR, RPAR, COMMA, SEMICOLON;
+}
