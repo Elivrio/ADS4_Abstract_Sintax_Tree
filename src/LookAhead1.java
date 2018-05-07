@@ -1,4 +1,3 @@
-package src.code;
 import java.io.IOException;
 
 public class LookAhead1 {

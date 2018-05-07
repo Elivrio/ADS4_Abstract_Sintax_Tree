@@ -1,4 +1,4 @@
-package src.code;
+import Env.Op;
 
 import java.awt.Color;
 
@@ -33,6 +33,21 @@ class OpToken extends Token {
       case "/" : return (a / b);
       case "*" : return (a * b);
       default : throw new Exception("Should Not Happen : Missmatched Operator");
+    }
+  }
+
+  public Op getOp() throws Exception {
+    switch (operator) {
+    case "+":
+      return Op.ADD;
+    case "-":
+      return Op.SUB;
+    case "/":
+      return Op.DIV;
+    case "*":
+      return Op.MUL;
+    default:
+      throw new Exception("Should Not Happen : Missmatched Operator");
     }
   }
 
@@ -76,5 +91,22 @@ class ColorToken extends Token {
 
   public String toString() {
     return (super.toString() + " " + color.toString());
+  }
+}
+
+class StringToken extends Token {
+  protected String str;
+
+  public StringToken(String str) {
+    super(Symbol.VARIA);
+    this.str = str;
+  }
+
+  public String getString() {
+    return str;
+  }
+
+  public String toString() {
+    return (super.toString() + " " + str);
   }
 }
